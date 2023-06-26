@@ -27,3 +27,4 @@ lib-cov
 # Added
 remove-functions.js
 mysql-data-backup
+__pycache__/
