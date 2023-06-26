@@ -2,6 +2,8 @@
 
 This project is a Telegram bot built using Python, which runs on the backend and interacts with users on the Telegram platform. The bot utilizes a MySQL database for data storage and retrieval.
 
+The idea of this project is to use the website as a way of getting aggregated data that enables the bot to notify people about when their favorite shows release a new episode or season. Once they have been notified, they can then watch them on the respective-legal streaming platform they use to consume media content.
+
 ## Getting Started
 
 To get started with this Telegram bot project, follow the instructions below.
