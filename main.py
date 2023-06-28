@@ -385,32 +385,20 @@ def start(message):
 
 def check_new_items():
     print('Starting to check new items')
-    previous_content = get_latest_saved_content()
     base_url = 'https://hd.fmoviesto.site'
 
     while True:
         current_content = get_homepage_content(base_url)
+        new_items = parse_content(current_content, base_url)
+        store_items(new_items)
+        notification.notify_users(bot)
 
-        if current_content != previous_content:
-            # Content has changed, parse the new items
-            new_items = parse_content(current_content, base_url)
-
-            # Store the new items in the database
-            store_items(new_items)
-
-            # Save the current content to the database
-            save_content(current_content)
-
-            # Notify users about the new items
-            notification.notify_users(bot)
-
-            previous_content = current_content
-            # Get the current date and time
-            current_datetime = datetime.datetime.now()
-            print('Completed one loop of comparing the data at: ', current_datetime)
+        # Get the current date and time
+        current_datetime = datetime.datetime.now()
+        print('Completed one loop of checking the data at:', current_datetime)
 
         # Wait for some time before checking again (e.g., every hour)
-        time.sleep(3600)
+        time.sleep(10800)
 
 
 def get_latest_saved_content():
