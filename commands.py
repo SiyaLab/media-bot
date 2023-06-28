@@ -44,6 +44,25 @@ def set_bot_commands(bot):
 
     @bot.message_handler(commands=['start'])
     def start(message):
+        startMessage = '''
+            Welcome to the Telegram Bot!
+
+            This bot provides you with the latest updates and information about movies and TV shows. Stay up-to-date with the newest releases, popular shows, and more.
+
+            Command Descriptions:
+
+            /start - Start the bot and receive a welcome message.
+            /add - Add a favorite TV Show or Movie to your list. The bot will inform you when it a new one is released.
+            /remove - Remove a favorite TV Show or Movie from your list.
+            /remove_all - Remove all favorite TV Shows and Movies from your list.
+            /list - View the list of your added favorites.
+            /tv_watch_list - View details about TV shows.
+            /help - Get help and information about the available commands.
+            /settings - Show the settings for the bot.
+            /feedback - Send feedback to the bot.
+
+            Feel free to explore these commands and enjoy using the bot! If you have any questions or need further assistance, don't hesitate to ask.
+        '''
         bot.send_message(
             message.chat.id, 'Please choose an option:', reply_markup=blank_keyboard)
 
