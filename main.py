@@ -126,18 +126,19 @@ class MySQLConnector:
         self.cursor.nextset()
         self.cursor.fetchall()
 
-        self.cursor.execute("""
-            CREATE TABLE IF NOT EXISTS fmovies_homepage_content (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                content LONGTEXT,
-                date_added DATETIME,
-                createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-                updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-            );
-        """)
+        # No longer needed for now. Need to implement something in future
+        # self.cursor.execute("""
+        #     CREATE TABLE IF NOT EXISTS fmovies_homepage_content (
+        #         id INT AUTO_INCREMENT PRIMARY KEY,
+        #         content LONGTEXT,
+        #         date_added DATETIME,
+        #         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+        #         updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        #     );
+        # """)
 
-        self.cursor.nextset()
-        self.cursor.fetchall()
+        # self.cursor.nextset()
+        # self.cursor.fetchall()
 
         self.connection.commit()
 
